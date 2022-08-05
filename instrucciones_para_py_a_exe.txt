@@ -1,0 +1,10 @@
+1- instalar "pip" y tener "variable entorno" (marcar casillas al instalar python)
+2- crear archivo "codigo_programa.py"
+3- abrir cmd sobre el directorio del archivo .py
+4- ejecutar "pip", para ver que esté instalado
+5- ejecutar "pip install pyinstaller"
+6- ejecutar "pyinstaller --onefile [-i icono_app.ico] [-w] codigo_programa.py"
+7- esperar que acabe, esto crea varios archivos y directorios
+8- guardar el ".\dist\codigo_programa.exe", y eliminar lo demás
+9- arrastrarlo a barra de tareas
+
