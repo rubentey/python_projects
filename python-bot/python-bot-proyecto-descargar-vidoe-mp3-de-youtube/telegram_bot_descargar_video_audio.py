@@ -4,8 +4,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Cal
 import yt_dlp
 
 # Configuración inicial
-DOWNLOAD_PATH = '/home/minisforum/Descargas/'  # Ruta donde se guardarán los archivos descargados
-BOT_TOKEN = '7640110713:AAFQsHCkW0lGZa8W830OSrWIfq-bGWqoQXw'  # Cambia 'YOUR_BOT_TOKEN' por el token de tu bot
+DOWNLOAD_PATH = '/RUTA/CARPETA/'  # Ruta donde se guardarán los archivos descargados
+BOT_TOKEN = 'TOKEN_DE_TELEGRAM'  # Cambia 'YOUR_BOT_TOKEN' por el token de tu bot
 
 # Función para limpiar el enlace de YouTube
 def limpiar_enlace(url):
