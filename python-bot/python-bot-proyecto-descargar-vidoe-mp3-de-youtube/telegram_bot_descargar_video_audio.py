@@ -4,8 +4,17 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Cal
 import yt_dlp
 
 # Configuración inicial
-DOWNLOAD_PATH = '/RUTA/CARPETA/'  # Ruta donde se guardarán los archivos descargados
-BOT_TOKEN = 'TOKEN_DE_TELEGRAM'  # Cambia 'YOUR_BOT_TOKEN' por el token de tu bot
+DOWNLOAD_PATH = '/ruta/donde/se/descarga/'  # Ruta donde se guardarán los archivos descargados
+BOT_TOKEN = 'EL_TOKEN_DEL_BOT'  # Cambia 'YOUR_BOT_TOKEN' por el token de tu bot
+
+
+# Función para manejar el comando /start
+async def start(update: Update, context):
+    await update.message.reply_text("¡Hola! Bienvenido al bot. Compárteme tu enlace de Youtube. Y elige descargar audio o vídeo. Si ocupa menos de 20MB, te lo envío.")
+
+async def info(update: Update, context):
+    await update.message.reply_text("¡Tan solo admito enlaces de youtube.com, y de youtu.be! ¡Máximo 20MB cada Audio o Vídeo!")
+
 
 # Función para limpiar el enlace de YouTube
 def limpiar_enlace(url):
@@ -101,6 +110,12 @@ async def download_video(query, video_url):
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()
+
+    # Manejador del comando /start
+    application.add_handler(CommandHandler("start", start))
+
+    # Manejador del comando /info
+    application.add_handler(CommandHandler("info", info))
 
     # Manejador de mensajes con enlaces
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, link_handler))
